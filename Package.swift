@@ -24,5 +24,8 @@ let package = Package(
         .testTarget(
             name: "swift-eventTests",
             dependencies: ["swift-event"]),
+    ],
+    swiftLanguageVersions: [
+        .v5,
     ]
 )
