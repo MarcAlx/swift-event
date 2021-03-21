@@ -15,7 +15,7 @@ public class EventHandler<T> {
     
     /// Instanciate a new typed EventHandler
     /// - parameter handle: the associated Delegate to handle the Event
-    init(handle:@escaping Delegate<T>){
+    public init(handle:@escaping Delegate<T>){
         self._handle = handle
     }
 }
@@ -49,7 +49,7 @@ public class Event<T> {
     /// - note: shorthand to +=
     /// - parameter handler: the EventHandler to add
     /// - returns: a function that is a shorthand to -=, to ease unsubscribe
-    func subscribe (handler: EventHandler<T>)-> () -> Void {
+    public func subscribe (handler: EventHandler<T>)-> () -> Void {
         self += handler
         return { self.unsubscribe(handler: handler) }
     }
@@ -57,28 +57,28 @@ public class Event<T> {
     /// Unsubsribe from an event by removing handler
     /// - note: shorthand to -=
     /// - parameter handler: the EventHandler to remove
-    func unsubscribe (handler: EventHandler<T>) -> Void {
+    public func unsubscribe (handler: EventHandler<T>) -> Void {
         self -= handler
     }
     
     /// Subscribe to an event by adding an handler
     /// - parameter event: the Event to subscribe
     /// - parameter handler: the EventHandler to add
-    static func += ( event: Event, handler: EventHandler<T>) -> Void {
+    public static func += ( event: Event, handler: EventHandler<T>) -> Void {
         event.handlers.append(handler)
     }
     
     /// Unsubsribe from an event by removing handler
     /// - parameter event: the Event to unsubscribe
     /// - parameter handler: the EventHandler to remove
-    static func -= ( event: Event, handler: EventHandler<T>) -> Void {
+    public static func -= ( event: Event, handler: EventHandler<T>) -> Void {
         event.handlers.removeAll{$0 === handler}
     }
     
     /// Create an Event and return it along with its invoke method
     /// - note: this is the only way to instantiate an Event, this way only the class that call this method has access to invoke
     /// - returns: A tuple containing the created Event along with a pointer to its private invoke
-    static func create() -> (invoke:Delegate<T>,event:Event<T>){
+    public static func create() -> (invoke:Delegate<T>,event:Event<T>){
         let res = Event<T>()
         return (res.invoke,res)
     }
