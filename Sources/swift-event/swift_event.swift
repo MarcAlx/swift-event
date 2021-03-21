@@ -21,8 +21,8 @@ public class EventHandler<T> {
 }
 
 /// Typed Event
-/// - note : Instanciation is only possible via create
-/// - Example :
+/// - note: Instanciation is only possible via create
+/// - Example:
 ///       var tmp = Event<String>.create()
 ///       var dispoe = tmp.event += EventHandler<String>(handle: {sender, args in print(args)})
 ///       tmp.invoke(self,"Hello")
@@ -36,9 +36,9 @@ class Event<T> {
     }
     
     /// Invoke this event on all handlers with given value
-    /// - note : private to avoid invokation from anywhere, you get a reference to this method on creation via create
-    /// - parameter sender : Sender of the Event
-    /// - parameter value : arg that will be forwarded to all handlers
+    /// - note: private to avoid invokation from anywhere, you get a reference to this method on creation via create
+    /// - parameter sender: Sender of the Event
+    /// - parameter value: arg that will be forwarded to all handlers
     private func invoke(sender:AnyObject?,value:T) -> Void {
         for handler in self.handlers {
             handler.handle(sender,value)
@@ -46,7 +46,7 @@ class Event<T> {
     }
     
     /// Subscribe to an event by adding an handler
-    /// - note : shorthand to +=
+    /// - note: shorthand to +=
     /// - parameter handler: the EventHandler to add
     /// - returns: a function that is a shorthand to -=, to ease unsubscribe
     func subscribe (handler: EventHandler<T>)-> () -> Void {
@@ -55,7 +55,7 @@ class Event<T> {
     }
     
     /// Unsubsribe from an event by removing handler
-    /// - note : shorthand to -=
+    /// - note: shorthand to -=
     /// - parameter handler: the EventHandler to remove
     func unsubscribe (handler: EventHandler<T>) -> Void {
         self -= handler
@@ -76,8 +76,8 @@ class Event<T> {
     }
     
     /// Create an Event and return it along with its invoke method
-    /// - note : this is the only way to instantiate an Event, this way only the class that call this method has access to invoke
-    /// - returns : A tuple containing the created Event along with a pointer to its private invoke
+    /// - note: this is the only way to instantiate an Event, this way only the class that call this method has access to invoke
+    /// - returns: A tuple containing the created Event along with a pointer to its private invoke
     static func create() -> (invoke:Delegate<T>,event:Event<T>){
         let res = Event<T>()
         return (res.invoke,res)
