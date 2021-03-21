@@ -27,7 +27,7 @@ public class EventHandler<T> {
 ///       var dispoe = tmp.event += EventHandler<String>(handle: {sender, args in print(args)})
 ///       tmp.invoke(self,"Hello")
 ///       dispose()
-class Event<T> {
+public class Event<T> {
     /// handlers that will be called on each invoke
     private var handlers:[EventHandler<T>] = []
     
