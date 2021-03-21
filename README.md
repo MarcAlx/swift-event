@@ -99,9 +99,6 @@ All commented it's <100 sloc just copy and paste it into your code.
         }
         
         private var _somethingHappenedInvoke:Delegate<String>
-        public var somethingHappenedInvoke: Delegate<String> {
-            return self.somethingHappenedInvoke
-        }
         
         public init() {
             let tmp = Event<String>.create()
