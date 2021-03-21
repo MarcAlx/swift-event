@@ -61,18 +61,18 @@ class Event<T> {
         self -= handler
     }
     
-    /// Unsubsribe from an event by removing handler
-    /// - parameter event: the Event to unsubscribe
-    /// - parameter handler: the EventHandler to remove
-    static func -= ( event: Event, handler: EventHandler<T>) -> Void {
-        event.handlers.removeAll{$0 === handler}
-    }
-    
     /// Subscribe to an event by adding an handler
     /// - parameter event: the Event to subscribe
     /// - parameter handler: the EventHandler to add
     static func += ( event: Event, handler: EventHandler<T>) -> Void {
         event.handlers.append(handler)
+    }
+    
+    /// Unsubsribe from an event by removing handler
+    /// - parameter event: the Event to unsubscribe
+    /// - parameter handler: the EventHandler to remove
+    static func -= ( event: Event, handler: EventHandler<T>) -> Void {
+        event.handlers.removeAll{$0 === handler}
     }
     
     /// Create an Event and return it along with its invoke method
