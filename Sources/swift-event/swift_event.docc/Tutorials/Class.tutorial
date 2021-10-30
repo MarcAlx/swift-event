@@ -1,0 +1,58 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Sample and usage") {
+        This tutorial guides you through the creation of events inside a class.
+    }
+    
+    @Section(title: "Getting started") {
+        @ContentAndMedia {
+            For use in a class follow these steps :
+        }
+        
+        @Steps {
+            @Step {
+                Import swift-event.
+                @Code(name:"Class.Swift",file:"class-1.swift")
+            }
+            @Step {
+                Create a class.
+                @Code(name:"Class.Swift",file:"class-2.swift")
+            }
+            @Step {
+                Declare an event with its private backing property.
+                @Code(name:"Class.Swift",file:"class-3.swift")
+            }
+            @Step {
+                Declare a private delegate to further fire the event only from the inside of this class.
+                @Code(name:"Class.Swift",file:"class-4.swift")
+            }
+            @Step {
+                Init the event and init the properties.
+                @Code(name:"Class.Swift",file:"class-5.swift")
+            }
+            @Step {
+                Fire the event in your code logic.
+                @Code(name:"Class.Swift",file:"class-6.swift")
+            }
+            @Step {
+                To use it, instantiate yout class.
+                @Code(name:"Main.Swift",file:"class-7.swift")
+            }
+            @Step {
+                Create an event handler.
+                @Code(name:"Main.Swift",file:"class-8.swift")
+            }
+            @Step {
+                Register it.
+                @Code(name:"Main.Swift",file:"class-9.swift")
+            }
+            @Step {
+                Call a method that trigers the event
+                @Code(name:"Main.Swift",file:"class-10.swift")
+            }
+            @Step {
+                Unsubscribe if you don't need it anymore.
+                @Code(name:"Main.Swift",file:"class-11.swift")
+            }
+        }
+    }
+}

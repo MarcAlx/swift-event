@@ -1,0 +1,26 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Quick") {
+        Here's some quick samples.
+    }
+    
+    @Section(title: "Getting started") {
+        @ContentAndMedia {
+            Various quick and functional usages.
+        }
+        
+        @Steps {
+            @Step {
+                Quick 1
+                @Code(name:"Quick.Swift",file:"quick-1.swift")
+            }
+            @Step {
+                Quick 2
+                @Code(name:"Quick.Swift",file:"quick-2.swift")
+            }
+            @Step {
+                Functional
+                @Code(name:"Quick.Swift",file:"functional-1.swift")
+            }
+        }
+    }
+}
