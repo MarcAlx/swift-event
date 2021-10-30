@@ -1,0 +1,15 @@
+@Tutorials(name: "swift-event tutorials") {
+    @Intro(title: "Meet swift-event") {
+        Here you will find all the basis for using `swift-event`.
+    }
+    
+    @Chapter(name: "Getting started") {
+        Here's how to get started !
+        @TutorialReference(tutorial: "doc:GettingStarted")
+    }
+    
+    @Chapter(name: "Use inside a class") {
+        A simple integrationi in a class.
+        @TutorialReference(tutorial: "doc:Class")
+    }
+}

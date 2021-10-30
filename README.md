@@ -12,7 +12,6 @@ This package is built arround the following principes :
 
 3. **Encapsulation** : `invoke` is not accessible outside of declaration scope, preventing other classes from breaking internal logic.
 
-
 [Installation](#Installation) - [Getting started](#getting-started) - [Samples](#samples) - [Docs](#docs) - [Q&A](#q&a) - [Changelog](#changelog)
 
 ## Installation
@@ -92,6 +91,8 @@ All commented it's <100 sloc just copy and paste it into your code.
 
 #### Test.swift
 
+    import swift_event
+
     class Test {
         private var _somethingHappened:Event<String>
         public var somethingHappened: Event<String> {
@@ -126,6 +127,8 @@ All commented it's <100 sloc just copy and paste it into your code.
     test.doSomething() //should print nothing, as handler has been unsubscribe
 
 ## Docs
+
+Documentation is also provided as a `.doccarchive` that includes some interractive tutorials, here : `./Doc/swift-event.doccarchive` 
 
 ### `class Event<T>`
 
@@ -194,6 +197,10 @@ Shorthand for Event delegation
 ### Q. Why can't `Event.init()` is private ?
 
 **A.** To avoid call to `invoke()` outside of creation scope. (like `invoke() in c#`)
+
+## Contributing
+
+You can contribute to this repo via pull requests, be sure to follow the philosophy of this repo and to update documentation.
 
 ## Changelog
 

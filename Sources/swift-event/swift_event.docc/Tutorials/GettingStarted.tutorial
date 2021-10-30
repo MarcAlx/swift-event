@@ -1,0 +1,34 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Sample and usage") {
+        This tutorial guides you through the creation of events.
+    }
+    
+    @Section(title: "Getting started") {
+        @ContentAndMedia {
+            Here's how to get started
+        }
+        
+        @Steps {
+            @Step {
+                First import package
+                @Code(name:"GettingStarted.Swift",file:"getting-started-1.swift")
+            }
+            @Step {
+                Create an event
+                @Code(name:"GettingStarted.Swift",file:"getting-started-2.swift")
+            }
+            @Step {
+                Create an handler and subscribe
+                @Code(name:"GettingStarted.Swift",file:"getting-started-3.swift")
+            }
+            @Step {
+                Invoke the event
+                @Code(name:"GettingStarted.Swift",file:"getting-started-4.swift")
+            }
+            @Step {
+                (optional) Unsubscribe
+                @Code(name:"GettingStarted.Swift",file:"getting-started-5.swift", )
+            }
+        }
+    }
+}
