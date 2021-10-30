@@ -24,7 +24,7 @@ You can use [The Swift Package Manager](https://swift.org/package-manager) to in
 
 ```
 dependencies: [
-        .package(url: "https://github.com/MarcAlx/swift-event.git", from: "1.0.0"),
+        .package(url: "https://github.com/MarcAlx/swift-event.git", from: "1.0.1"),
     ]
 ```
 
